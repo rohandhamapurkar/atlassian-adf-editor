@@ -1,0 +1,1 @@
+import{s as e}from"./index-BkdVJ2ND.js";import{t}from"./BTKcinor.js";import{t as n}from"./e4fEDSDx.js";var r=e(t()),i=function(){var e=n()?.renderers;return e=(0,r.useMemo)(function(){return e},[e]),e};export{i as t};

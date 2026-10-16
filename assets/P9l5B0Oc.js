@@ -1,0 +1,1 @@
+function e(){return`motion`}var t={colorMode:`auto`,contrastMode:`auto`,dark:`dark`,light:`light`,shape:`shape`,spacing:`spacing`,typography:`typography`,motion:e,UNSAFE_themeOptions:void 0},n=function(e){for(var t=0,n=0;n<e.length;n++){var r=e.charCodeAt(n);t=(t<<5)-t+r,t&=t}return new Uint32Array([t])[0].toString(36)};export{t as n,n as t};

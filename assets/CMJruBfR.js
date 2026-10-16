@@ -1,0 +1,1 @@
+import{s as e}from"./index-BkdVJ2ND.js";import{t}from"./BTKcinor.js";import{t as n}from"./CfSJ4tom.js";var r=(0,e(t()).createContext)(n);export{r as t};

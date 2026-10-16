@@ -1,0 +1,1 @@
+var e=/^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[0-9a-f]{4}-[0-9a-f]{12}$/i,t=function(t){if(typeof t!=`string`)return!1;var n=t.toLowerCase();if(!e.test(n))return!1;var r=n[14];if(r===`1`||r===`2`)return!0;if(r===`3`||r===`4`||r===`5`){var i=n[19];return i===`8`||i===`9`||i===`a`||i===`b`}return!1};export{t};

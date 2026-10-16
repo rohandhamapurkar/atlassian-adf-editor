@@ -1,0 +1,1 @@
+import{tn as e}from"./r53ktVLZ.js";export default e();

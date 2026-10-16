@@ -1,0 +1,1 @@
+import{s as e}from"./index-BkdVJ2ND.js";import{t}from"./BTKcinor.js";import{n,t as r}from"./HNtPIAns.js";n();var i=e(t());function a(e,t,n){var a=(0,i.forwardRef)(function(a,o){return e()?i.createElement(t,r({},a,{ref:o})):i.createElement(n,r({},a,{ref:o}))});return t.name!==``&&(a.displayName=`ComponentWithCondition[${e.name}]`),a}export{a as t};

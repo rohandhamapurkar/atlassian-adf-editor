@@ -1,0 +1,1 @@
+import{s as e}from"./index-BkdVJ2ND.js";import{t}from"./BTKcinor.js";import{t as n}from"./BKOb8Rty.js";var r=e(t()),i=function(){return(0,r.useContext)(n)};n.displayName=`SurfaceProvider`;export{i as t};

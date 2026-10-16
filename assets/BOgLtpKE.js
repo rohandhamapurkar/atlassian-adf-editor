@@ -1,0 +1,1 @@
+import{r as e}from"./Bc4eDN70.js";var t=function(t){var n,r=t!=null&&(n=t.name)!=null&&n.trim()?t.name:e,i=Error(r);return i.name=r,t&&Object.defineProperty(i,"cause",{value:t,enumerable:!1,configurable:!0,writable:!0}),i};export{t};

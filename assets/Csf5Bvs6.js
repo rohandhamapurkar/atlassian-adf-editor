@@ -1,0 +1,1 @@
+import{s as e}from"./index-BkdVJ2ND.js";import{t}from"./BTKcinor.js";var n=e(t()),r=function(e){var t=(0,n.useRef)(e);return t.current=e,t};export{r as t};

@@ -1,0 +1,1 @@
+import{s as e}from"./index-BkdVJ2ND.js";import{n as t,t as n}from"./Cpd1UHs3.js";import{t as r}from"./CUHgKHZW.js";var i=e(r());n();var a=t(i.default,`redBold`);a.displayName=`AudioIconWithColor`;export{a as default};

@@ -1,0 +1,1 @@
+var e=function(e){return e[e.MB=1048576]=`MB`,e[e.GB=1073741824]=`GB`,e[e.TB=1099511627776]=`TB`,e}({}),t=`recents`,n=2592e3,r=4096,i=5*e.MB,a=1e3,o=2*e.TB,s=`FileReaderError`;export{o as a,e as c,r as i,n,a as o,s as r,t as s,i as t};

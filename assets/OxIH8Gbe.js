@@ -1,0 +1,1 @@
+import{n as e,t}from"./DJKJ8VR6.js";function n(n,r){e(2,arguments);var i=t(n),a=t(r);return i.getFullYear()===a.getFullYear()&&i.getMonth()===a.getMonth()}export{n as t};

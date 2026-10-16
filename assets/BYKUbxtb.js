@@ -1,0 +1,1 @@
+import{s as e}from"./index-BkdVJ2ND.js";import{t}from"./CJ89CNyk.js";import{n,t as r}from"./Cpd1UHs3.js";var i=e(t());r();var a=n(i.default,`blueBold`);a.displayName=`AngleBracketsIconWithColor`;export{a as default};

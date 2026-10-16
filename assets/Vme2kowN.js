@@ -1,0 +1,1 @@
+var e=(function(e){return function(t){return function(n){var r=n(t),i=r.clone();return i&&i.fire(e),r}}});export{e as t};

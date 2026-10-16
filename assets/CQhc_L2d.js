@@ -1,0 +1,1 @@
+import{s as e}from"./index-BkdVJ2ND.js";import{t}from"./BTKcinor.js";import{t as n}from"./e4fEDSDx.js";var r=e(t()),i=function(){var e=n(),t=e.rovoOptions,i=e.product;return(0,r.useMemo)(function(){return{rovoOptions:t,product:i}},[t,i])};export{i as t};

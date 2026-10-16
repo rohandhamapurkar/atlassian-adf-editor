@@ -1,0 +1,1 @@
+import{t as e}from"./DmymjlOi.js";var t=e(),n=function(e){return{eventType:`ui`,action:`closed`,actionSubject:`mediaViewer`,attributes:{sessionDurationMs:(0,t.end)(`MediaViewer.SessionDuration`).duration||0,input:e}}};export{n as t};
