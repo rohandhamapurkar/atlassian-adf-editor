@@ -10,6 +10,9 @@
 
 # production
 /build
+build-verification.log
+upgrade-install.log
+upgrade-tests.log
 
 # misc
 .DS_Store

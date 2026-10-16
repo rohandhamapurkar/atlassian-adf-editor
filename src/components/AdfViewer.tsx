@@ -1,14 +1,15 @@
 import React, { useState, useRef, useCallback, useEffect } from 'react';
-import { IntlProvider } from 'react-intl-next';
+import { IntlProvider } from 'react-intl';
 import TextArea from '@atlaskit/textarea';
 import { ComposableEditor } from '@atlaskit/editor-core/composable-editor';
 import { useUniversalPreset } from '@atlaskit/editor-core/preset-universal';
 import { usePreset } from '@atlaskit/editor-core/use-preset';
-import { EditorContext, WithEditorActions, ToolbarHelp } from '@atlaskit/editor-core';
-import type { EditorActions, EditorProps } from '@atlaskit/editor-core';
-import type { ExtractInjectionAPI } from '@atlaskit/editor-common/types';
-import type { HelpDialogPlugin } from '@atlaskit/editor-plugins/help-dialog';
+import type { EditorProps } from '@atlaskit/editor-core';
+import type { ExtractPresetAPI } from '@atlaskit/editor-common/preset';
+import { ToolbarButton } from '@atlaskit/editor-common/ui-menu';
 import { mentionResourceProvider } from '../utils/SimpleMentionResource';
+import { emojiProvider } from '../utils/LocalEmojiResource';
+import { editorFeatures } from '../editorConfig';
 import ResizableSplit from './ResizableSplit';
 
 const EDITOR_STATE_DB = 'adf-editor-state';
@@ -65,10 +66,13 @@ const loadEditorState = async (): Promise<string | null> => {
 
 const providers = {
   mentionProvider: Promise.resolve(mentionResourceProvider),
+  emojiProvider,
 };
 
+type EditorApi = ExtractPresetAPI<ReturnType<typeof useUniversalPreset>>;
+
 interface ComposableEditorWrapperProps extends EditorProps {
-  onEditorApiReady?: (api: any) => void;
+  onEditorApiReady?: (api: EditorApi) => void;
 }
 
 const ComposableEditorWrapper = ({ onEditorApiReady, ...props }: ComposableEditorWrapperProps) => {
@@ -89,16 +93,13 @@ const ComposableEditorWrapper = ({ onEditorApiReady, ...props }: ComposableEdito
       preset={preset}
       {...props}
       primaryToolbarComponents={
-        <ToolbarHelp
-          key={1}
+        <ToolbarButton
           titlePosition="top"
           title="Help"
-          editorApi={
-            props.allowHelpDialog
-              ? (editorApi as ExtractInjectionAPI<HelpDialogPlugin>)
-              : undefined
-          }
-        />
+          onClick={() => editorApi?.helpDialog?.actions.openHelp()}
+        >
+          Help
+        </ToolbarButton>
       }
     />
   );
@@ -106,26 +107,19 @@ const ComposableEditorWrapper = ({ onEditorApiReady, ...props }: ComposableEdito
 
 const AdfViewer: React.FC = () => {
   const [isValidAdf, setIsValidAdf] = useState(true);
-  const editorActionsRef = useRef<EditorActions | null>(null);
-  const editorApiRef = useRef<any>(null);
+  const editorApiRef = useRef<EditorApi>();
   const adfTextAreaRef = useRef<HTMLTextAreaElement | null>(null);
   const pendingRestoreRef = useRef<string | null>(null);
 
   const replaceEditorDocument = useCallback((adfJson: string) => {
     if (editorApiRef.current?.core?.actions?.replaceDocument) {
-      editorApiRef.current.core.actions.replaceDocument(adfJson);
-      return true;
-    }
-
-    if (editorActionsRef.current) {
-      editorActionsRef.current.replaceDocument(adfJson);
-      return true;
+      return editorApiRef.current.core.actions.replaceDocument(adfJson);
     }
 
     return false;
   }, []);
 
-  const handleEditorApiReady = useCallback((api: any) => {
+  const handleEditorApiReady = useCallback((api: EditorApi) => {
     editorApiRef.current = api;
 
     if (pendingRestoreRef.current) {
@@ -168,8 +162,8 @@ const AdfViewer: React.FC = () => {
   // Debounced editor→textarea sync to avoid race conditions on rapid typing
   const debounceTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const updateTextArea = useCallback(() => {
-    if (!editorActionsRef.current) return;
-    editorActionsRef.current.getValue().then((value) => {
+    editorApiRef.current?.core.actions.requestDocument((value) => {
+      if (!value) return;
       const serializedAdf = JSON.stringify(value, null, 2);
       if (adfTextAreaRef.current) {
         adfTextAreaRef.current.value = serializedAdf;
@@ -218,6 +212,10 @@ const AdfViewer: React.FC = () => {
       try {
         const didReplace = replaceEditorDocument(value);
         if (!didReplace) {
+          if (editorApiRef.current) {
+            setIsValidAdf(false);
+            return;
+          }
           pendingRestoreRef.current = value;
         }
 
@@ -234,52 +232,40 @@ const AdfViewer: React.FC = () => {
 
   return (
     <IntlProvider locale="en">
-      <EditorContext>
-        <ResizableSplit>
-          {/* Left Panel — Editor */}
-          <WithEditorActions
-            render={(actions) => {
-              editorActionsRef.current = actions;
-              return (
-                <ComposableEditorWrapper
-                  appearance="full-page"
-                  allowRule={true}
-                  allowTextColor={true}
-                  allowTables={{ allowControls: true }}
-                  allowPanel={true}
-                  allowHelpDialog={true}
-                  placeholder="We support markdown! Try **bold**, `inline code`, or ``` for code blocks."
-                  onChange={handleEditorChange}
-                  onEditorApiReady={handleEditorApiReady}
-                  {...providers}
-                />
-              );
-            }}
-          />
-          {/* Right Panel — ADF JSON */}
-          <div
-            style={{
-              display: 'flex',
-              flexDirection: 'column',
-              height: '100%',
-              padding: '0 8px',
-              boxSizing: 'border-box',
-            }}
-          >
-            <h2 style={{ margin: '8px 0', flexShrink: 0 }}>ADF</h2>
-            <div style={{ flex: 1, display: 'flex', flexDirection: 'column', minHeight: 0 }}>
-              <TextArea
-                isMonospaced={true}
-                minimumRows={20}
-                placeholder='{"version": 1...'
-                isInvalid={!isValidAdf}
-                ref={(ref: any) => (adfTextAreaRef.current = ref)}
-                onChange={handleAdfChange}
-              />
-            </div>
+      <ResizableSplit>
+        {/* Left Panel — Editor */}
+        <ComposableEditorWrapper
+          appearance="full-page"
+          {...editorFeatures}
+          placeholder="We support markdown! Try **bold**, `inline code`, or ``` for code blocks."
+          onChange={handleEditorChange}
+          onEditorApiReady={handleEditorApiReady}
+          {...providers}
+        />
+        {/* Right Panel — ADF JSON */}
+        <div
+          style={{
+            display: 'flex',
+            flexDirection: 'column',
+            height: '100%',
+            padding: '0 8px',
+            boxSizing: 'border-box',
+          }}
+        >
+          <h2 style={{ margin: '8px 0', flexShrink: 0 }}>ADF</h2>
+          <div style={{ flex: 1, display: 'flex', flexDirection: 'column', minHeight: 0 }}>
+            <TextArea
+              aria-label="ADF JSON"
+              isMonospaced={true}
+              minimumRows={20}
+              placeholder='{"version": 1...'
+              isInvalid={!isValidAdf}
+              ref={adfTextAreaRef}
+              onChange={handleAdfChange}
+            />
           </div>
-        </ResizableSplit>
-      </EditorContext>
+        </div>
+      </ResizableSplit>
     </IntlProvider>
   );
 };

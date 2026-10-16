@@ -1,11 +1,6 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
+import browserProcess from 'process';
 
-const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
-);
-root.render(
-  <App />
-);
+// Atlaskit has top-level process references in development. Install the browser
+// implementation before evaluating its dependency graph, including lazy chunks.
+globalThis.process ??= browserProcess;
+void import('./mountEditor');
