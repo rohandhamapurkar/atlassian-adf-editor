@@ -20,7 +20,7 @@ npm run verify    # TypeScript, regression tests, production build
 npm run preview   # Preview the production build at localhost:4173
 ```
 
-`npm run build` writes to `build/`. `npm run deploy` verifies first, then publishes that folder with gh-pages. It does not install dependencies or publish during verification. Relative asset URLs support GitHub Pages project paths. CI runs the same verification after a clean install.
+`npm run build` writes to `build/`. `npm run deploy` verifies first, then publishes that folder to the `gh-pages` branch with Jekyll disabled so assets beginning with underscores are served. Pushing `main` runs CI verification; deployment requires `npm run deploy`. Relative asset URLs support GitHub Pages project paths. CI runs the same verification after a clean install.
 
 ## Features
 

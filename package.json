@@ -29,7 +29,7 @@
     "test:ci": "vitest run",
     "typecheck": "tsc --noEmit",
     "verify": "npm run typecheck && npm run test:ci && npm run build",
-    "deploy": "npm run verify && gh-pages -d build"
+    "deploy": "npm run verify && gh-pages -d build --nojekyll"
   },
   "overrides": {
     "react": "$react",
