@@ -1,0 +1,1 @@
+import{i as e,r as t,s as n}from"./index-uLoEjqqO.js";import{n as r,t as i}from"./Dz6dhWpR.js";import{t as a}from"./l8UBiAcF.js";var o=e({default:()=>c}),s,c,l=t((()=>{s=n(a()),i(),c=r(s.default,`blueBold`),c.displayName=`PageIconWithColor`}));export{o as n,l as t};

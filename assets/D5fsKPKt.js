@@ -1,0 +1,1 @@
+import{s as e}from"./index-uLoEjqqO.js";import{t}from"./qFpjzeYY.js";import{t as n}from"./BxhmDCMf.js";var r=e(t()),i=function(){return(0,r.useContext)(n)};n.displayName=`SurfaceProvider`;export{i as t};

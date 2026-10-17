@@ -1,1 +1,0 @@
-import{s as e}from"./index-BkdVJ2ND.js";import{t}from"./BTKcinor.js";var n=e(t()),r=n.createContext(null);function i(){var e=(0,n.useContext)(r);if(e==null)throw Error(`Unable to find FlagProviderContext`);return e}export{r as n,i as t};

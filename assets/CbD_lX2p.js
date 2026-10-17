@@ -1,0 +1,1 @@
+import{s as e}from"./index-uLoEjqqO.js";import{t}from"./qFpjzeYY.js";var n=e(t()),r=(0,n.createContext)({getAtlaskitAnalyticsContext:function(){return[]},getAtlaskitAnalyticsEventHandlers:function(){return[]}}),i=function(){return(0,n.useContext)(r)};export{r as n,i as t};

@@ -1,0 +1,1 @@
+import{s as e}from"./index-uLoEjqqO.js";import{t}from"./qFpjzeYY.js";import{t as n}from"./DoH050os.js";var r=e(t()),i=function(e){return(0,r.useMemo)(function(){return n(e?.envKey,e?.baseUrlOverride)},[e?.baseUrlOverride,e?.envKey])};export{i as t};

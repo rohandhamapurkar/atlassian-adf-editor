@@ -1,0 +1,1 @@
+import{r as e,s as t}from"./index-uLoEjqqO.js";import{t as n}from"./qFpjzeYY.js";function r(e){var t=e.label,n=t===void 0?``:t,r=e.size,a=r===void 0?`medium`:r,o=e.testId,s=e.color,c=e.icon;return i.createElement(c,{label:n,size:a===`medium`?`medium`:`small`,color:s,testId:o})}var i,a=e((()=>{i=t(n())}));export{a as n,r as t};

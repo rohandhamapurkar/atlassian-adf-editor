@@ -1,0 +1,1 @@
+import{s as e}from"./index-uLoEjqqO.js";import{t}from"./qFpjzeYY.js";import{t as n}from"./DtIl-HuD.js";var r=e(t()),i=r.createContext(void 0),a=function(){var e=r.useContext(n),t=(r.useContext(i)||{}).mediaClient;if(!e&&!t)throw Error(`No MediaClient set, use MediaClientProvider or MediaProvider to set one`);return e||t};export{i as n,a as t};

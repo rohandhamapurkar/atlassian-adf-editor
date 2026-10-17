@@ -1,0 +1,1 @@
+import{s as e}from"./index-uLoEjqqO.js";import{t}from"./qFpjzeYY.js";import{n,t as r}from"./BRzVqPiA.js";import{t as i}from"./ChuvK1PI.js";n();var a=e(t()),o=e(i()),s=function(e){return a.createElement(o.default,r({color:`var(--ds-icon, #292A2E)`,spacing:`spacious`},e))};export{s as ProjectsIcon};

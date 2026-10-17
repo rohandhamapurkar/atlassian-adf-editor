@@ -1,0 +1,1 @@
+import{s as e}from"./index-uLoEjqqO.js";import{t}from"./qFpjzeYY.js";var n=e(t()),r=(0,n.createContext)(void 0);function i(){var e=(0,n.useContext)(r);if(!e)throw Error(`useSmartCard() must be wrapped in <SmartCardProvider>`);return e}export{r as n,i as t};

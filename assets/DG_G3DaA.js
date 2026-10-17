@@ -1,1 +1,0 @@
-import{s as e}from"./index-BkdVJ2ND.js";import{t}from"./BTKcinor.js";import{n,t as r}from"./HNtPIAns.js";import{t as i}from"./GYA9zJhI.js";n();var a=e(t()),o=e(i()),s=function(e){return a.createElement(o.default,r({color:`var(--ds-icon, #292A2E)`,spacing:`spacious`},e))};export{s as ProjectsIcon};

@@ -1,1 +1,0 @@
-import{s as e}from"./index-BkdVJ2ND.js";import{t}from"./BTKcinor.js";import{i as n,t as r}from"./DBT7MOX7.js";var i=e(t());r();var a=function(e){var t=e.children,r=e.htmlFor,a=e.id,o=e.testId;return i.createElement(`label`,{id:a,htmlFor:r,"data-testid":o,className:n([`_11c8wadc _1e0c1o8l _syazazsu _k48pwu06 _6rth1b66 _1pfhze3t`])},t)};export{a as t};

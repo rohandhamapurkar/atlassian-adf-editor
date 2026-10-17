@@ -1,1 +1,0 @@
-import{s as e}from"./index-BkdVJ2ND.js";import{t}from"./BTKcinor.js";import{t as n}from"./B4_rUcEx.js";var r=e(t()),i=r.createContext(void 0),a=function(){var e=r.useContext(n),t=(r.useContext(i)||{}).mediaClient;if(!e&&!t)throw Error(`No MediaClient set, use MediaClientProvider or MediaProvider to set one`);return e||t};export{i as n,a as t};

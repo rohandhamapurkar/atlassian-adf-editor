@@ -1,0 +1,1 @@
+import{t as e}from"./BGXU_lh5.js";function t(t){return e(t,`isEnabled`,!1)===!0}export{t};

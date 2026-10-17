@@ -1,1 +1,0 @@
-import{s as e}from"./index-BkdVJ2ND.js";import{t}from"./BTKcinor.js";var n=e(t()),r=(0,n.createContext)(!1),i=r.Provider,a=function(){return(0,n.useContext)(r)};export{i as n,a as t};

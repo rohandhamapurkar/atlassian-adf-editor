@@ -1,0 +1,1 @@
+import{s as e}from"./index-uLoEjqqO.js";import{t}from"./qFpjzeYY.js";import{t as n}from"./BpEGt8tT.js";import{L as r}from"./CZmffstn.js";var i=e(t()),a=function(e){var t=e.name,a=e.children;return i.createElement(r,{values:{name:t}},function(e){return i.createElement(n,{content:e,position:`right`},a)})};export{a as NoAccessTooltip};

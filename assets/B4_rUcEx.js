@@ -1,1 +1,0 @@
-import{s as e}from"./index-BkdVJ2ND.js";import{t}from"./BTKcinor.js";import{t as n}from"./yASn3nPi.js";var r=e(t()),i=r.createContext(void 0),a=function(e){var t=e.children,a=e.clientConfig,o=(0,r.useMemo)(function(){return n(a)},[a]);return r.createElement(i.Provider,{value:o},t)};export{a as n,i as t};

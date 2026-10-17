@@ -1,1 +1,0 @@
-import{s as e}from"./index-BkdVJ2ND.js";import{t}from"./BTKcinor.js";var n=e(t()),r=(0,n.createContext)({}),i=function(){var e=(0,n.useContext)(r).routerLinkComponent;if(e)return e};export{i as t};

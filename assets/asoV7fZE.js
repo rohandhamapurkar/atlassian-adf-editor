@@ -1,1 +1,0 @@
-import{s as e}from"./index-BkdVJ2ND.js";import{t}from"./BTKcinor.js";import{t as n}from"./DBQ09GFZ.js";import{t as r}from"./TYDpRaAj.js";var i=e(t()),a=e(r()),o=function(e){var t=e.label,r=e.onBlur,o=e.onClick,s=e.testId;return i.createElement(n,{testId:s&&`${s}--close-button`,appearance:`subtle`,icon:a.default,label:t||`Close Modal`,onBlur:r,onClick:o})};export{o as t};

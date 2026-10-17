@@ -1,1 +1,0 @@
-import{s as e}from"./index-BkdVJ2ND.js";import{t}from"./Pjj2p7Ix.js";import{t as n}from"./e4fEDSDx.js";var r=e(t()),i={status:`pending`};function a(e){var t=n().store;return(0,r.useSyncExternalStoreWithSelector)(t.subscribe,t.getState,t.getState,function(t){return t[e]})??i}export{a as t};

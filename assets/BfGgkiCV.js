@@ -1,0 +1,1 @@
+import{n as e}from"./BxbzjTeo.js";import{t}from"./BsgSQol6.js";function n(n,r){e(2,arguments);var i=t(n),a=t(r);return i.getTime()===a.getTime()}export{n as t};

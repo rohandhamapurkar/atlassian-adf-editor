@@ -1,1 +1,0 @@
-import{i as e,t}from"./DD4GHqKu.js";var n=[e];function r(){if(typeof document>`u`)return globalThis.ssrContext?.isInIC??!1;var e=t();return e?n.includes(e.perimeter)&&e.icDomain!==void 0:!1}export{n,r as t};

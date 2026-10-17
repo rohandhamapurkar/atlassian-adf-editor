@@ -1,0 +1,1 @@
+import{s as e}from"./index-uLoEjqqO.js";import{t}from"./qFpjzeYY.js";var n=e(t()),r=(0,n.createContext)({}),i=function(){var e=(0,n.useContext)(r).routerLinkComponent;if(e)return e};export{i as t};

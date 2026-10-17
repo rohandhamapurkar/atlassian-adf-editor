@@ -1,1 +1,0 @@
-import{s as e}from"./index-BkdVJ2ND.js";import{n as t,t as n}from"./Cpd1UHs3.js";import{mt as r}from"./r53ktVLZ.js";var i=e(r());n();var a=t(i.default,`yellowBold`);a.displayName=`ImageIconWithColor`;export{a as default};

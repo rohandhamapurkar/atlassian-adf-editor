@@ -1,0 +1,1 @@
+import{s as e}from"./index-uLoEjqqO.js";import{n as t,t as n}from"./CQ8XHy59.js";import{t as r}from"./BJyBnS0N.js";var i=e(r());n();var a=t(i.default,`blueBold`);a.displayName=`FolderClosedIconWithColor`;export{a as default};

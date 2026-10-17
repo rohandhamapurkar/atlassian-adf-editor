@@ -1,1 +1,0 @@
-import{s as e}from"./index-BkdVJ2ND.js";import{n as t,t as n}from"./DZhjbayO.js";import{t as r}from"./CXMYnOZ0.js";var i=e(r());n();var a=t(i.default,`redBold`);a.displayName=`VideoIconWithColor`;export{a as default};

@@ -1,1 +1,0 @@
-import{t as e}from"./0Qoulc_O.js";function t(t){return e(t,`isEnabled`,!1)===!0}export{t};

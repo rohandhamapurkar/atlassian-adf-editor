@@ -1,0 +1,1 @@
+import{s as e}from"./index-uLoEjqqO.js";import{t}from"./qFpjzeYY.js";var n=(0,e(t()).createContext)(`elevation.surface`);export{n as t};

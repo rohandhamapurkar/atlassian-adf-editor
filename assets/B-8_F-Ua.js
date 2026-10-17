@@ -1,1 +1,0 @@
-import{i as e,r as t}from"./Bbijvwaa.js";var n=function(e){return window&&window.sessionStorage&&window.sessionStorage.getItem(e)||void 0},r=function(){return n(t)},i=function(){return n(e)};export{r as n,i as t};
