@@ -14,4 +14,12 @@ jobs:
           node-version-file: .nvmrc
       - run: npm install --global npm@10.9.4
       - run: npm ci --no-audit --no-fund
+      - run: npx playwright install --with-deps chromium
       - run: npm run verify
+      - uses: actions/upload-artifact@v4
+        if: failure()
+        with:
+          name: browser-test-results
+          path: |
+            playwright-report/
+            test-results/

@@ -10,9 +10,12 @@
     "@atlaskit/link-provider": "6.0.1",
     "@atlaskit/media-core": "39.0.0",
     "@atlaskit/mention": "30.3.0",
-    "@atlaskit/textarea": "10.2.7",
+    "@codemirror/lang-json": "6.0.2",
+    "@codemirror/state": "6.7.6",
+    "@codemirror/view": "6.43.14",
     "@emotion/react": "11.14.0",
     "buffer": "6.0.3",
+    "codemirror": "6.0.2",
     "events": "3.3.0",
     "process": "0.11.10",
     "react": "18.3.1",
@@ -28,7 +31,9 @@
     "test": "vitest",
     "test:ci": "vitest run",
     "typecheck": "tsc --noEmit",
-    "verify": "npm run typecheck && npm run test:ci && npm run build",
+    "verify": "npm run typecheck && npm run test:ci && npm run build && npm run test:browser",
+    "test:browser": "playwright test",
+    "bundle:report": "node scripts/bundle-report.mjs",
     "deploy": "npm run verify && gh-pages -d build --nojekyll"
   },
   "overrides": {
@@ -38,6 +43,7 @@
   "devDependencies": {
     "@atlaskit/adf-schema": "57.7.16",
     "@atlaskit/editor-json-transformer": "10.0.0",
+    "@playwright/test": "1.64.1",
     "@testing-library/dom": "10.4.2",
     "@testing-library/jest-dom": "7.0.1",
     "@testing-library/react": "16.3.3",

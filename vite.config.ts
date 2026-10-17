@@ -56,6 +56,7 @@ export default defineConfig({
   },
   build: {
     outDir: 'build',
+    manifest: true,
     // Preserve the existing GitHub Pages deployment folder and short chunk names.
     rolldownOptions: {
       output: {

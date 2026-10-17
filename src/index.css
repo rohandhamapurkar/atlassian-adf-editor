@@ -55,3 +55,27 @@ html {
   white-space: nowrap !important;
   border: 0 !important;
 }
+
+.json-panel { display: flex; flex-direction: column; height: 100%; padding: 16px; box-sizing: border-box; gap: 12px; }
+.panel-header h1 { font-size: 20px; margin: 0; }
+.panel-header p { margin: 4px 0 0; color: #526078; font-size: 13px; }
+.tool-row { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+.tool-row button, .history-list button, .confirm-actions button { border: 1px solid #b7c1d0; background: white; color: #172b4d; padding: 7px 10px; border-radius: 5px; cursor: pointer; font: inherit; font-size: 13px; }
+button.primary { background: #0c66e4; color: white; border-color: #0c66e4; }
+button:disabled { opacity: .5; cursor: default; }
+button:focus-visible, summary:focus-visible { outline: 2px solid #0c66e4; outline-offset: 2px; }
+.feedback { margin: 0; font-size: 13px; color: #526078; overflow-wrap: anywhere; }
+.feedback.error { color: #ae2e24; background: #ffedeb; padding: 8px; border-radius: 4px; }
+.json-code { flex: 1; min-height: 180px; overflow: hidden; border: 1px solid #b7c1d0; background: white; border-radius: 6px; }
+.json-code [role="textbox"] { font-family: Consolas, monospace !important; }
+.loading-panel { padding: 24px; color: #526078; }
+.save-row { display: flex; justify-content: space-between; gap: 8px; color: #526078; font-size: 12px; flex-wrap: wrap; }
+.document-controls { border: 0; padding: 0; margin: 0; display: grid; gap: 8px; min-width: 0; }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+.confirm-box { padding: 12px; background: #fff7d6; border: 1px solid #e2b203; border-radius: 6px; }
+.confirm-box p { margin-top: 0; }
+.history { font-size: 13px; }
+.history summary { cursor: pointer; font-weight: 600; padding: 6px 0; }
+.history-list { list-style: none; padding: 0; margin: 8px 0 0; max-height: 180px; overflow: auto; }
+.history-list li { display: flex; justify-content: space-between; gap: 12px; align-items: center; padding: 8px; border-bottom: 1px solid #dcdfe4; }
+.history-list p { margin: 4px 0 0; color: #526078; overflow-wrap: anywhere; }
